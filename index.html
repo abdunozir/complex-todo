@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./animation.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+  <div class="container-1">
+    <div class="left">
+    </div>
+
+    <div class="right">
+
+      <!-- ?Header -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="user-im">
+        <div class="svg-img">
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="1.5" opacity=".3"></circle><path d="M4.34 17h9.32c-.84-.58-2.87-1.25-4.66-1.25s-3.82.67-4.66 1.25z" opacity=".3"></path><path d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm0 6.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5zM4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25H4.34zm11.7-3.19c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44zM15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35z"></path></svg>
+        </div>
+
+        <div class="name-h4">
+          <h5>New Employee</h3>
+          <p>Form design with validation</p>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="cards-wrapper">
+          <div class="card-header1">
+            <form class="card-search">
+              <i class="bi bi-search"></i>
+              <input type="text" class="search-input" onkeyup="searched(event)" placeholder="Search">
+            </form>
+            <button type="button" style="color: #333996;font-size: 18px;border: 2px solid #253053;" class="d-flex align-items-center fs-20 btn btn-light open-add-modal"><i class="bi bi-plus"></i>Add new</button>
+          </div>
+          <div class="card-body1">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col card-title1" onclick="asName('name')">Employee Name</th>
+                  <th scope="col card-title1" onclick="asEmail()">Email Address (Personal)</th>
+                  <th scope="col card-title1"  onclick="numSort()">Mobile Number</th>
+                  <th scope="col card-title1"  onclick="depart()">Department</th>
+                  <th scope="col card-title1">Action</th>
+                </tr>
+              </thead>
+              <tbody class="table_body">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <!-- adding modal -->
+
+   <div class="modal-container modal-close-anim">
+      <div class="modal-dialog1">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Employee Form</h5>
+            <button type="button" style="background-color: rgba(255, 0, 0, 0.196);" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-inputs">
+              <div class="name_div">
+                <input type="text" required class="form-control userName" id="exampleFormControlInput1" placeholder="Full name">
+                <span class="userName_span notrequire requireds">Minimum 5 letter required.</span>
+              </div>
+              <div class="email_div">
+                <input type="email" required class="form-control userEmail" id="exampleFormControlInput1 userEmail" placeholder="Email">
+                <span for="userEmail_span" class="emailLabel notrequire requireds"> "@"  is required.</span>
+              </div>
+              <div class="number_div">
+                <input type="number"  required class="form-control userNumber" id="exampleFormControlInput1" placeholder="(99) ... .. .." maxlength="13">
+                  <span class="userNumber_span notrequire requireds">Minimum 8 numbers required.</span>
+              </div>
+              <input type="text" required class="form-control userCity" id="exampleFormControlInput1" placeholder="City">
+            </div>
+            <div class="modal-selections">
+              <div class="modal-radio">
+                <h5>Gender</h5>
+                <div class="checks">
+                  <div class="form-check">
+                    <input class="form-check-input"  type="radio" name="flexRadioDefault" id="flexRadioDefault" >
+                    <label class="form-check-label" for="flexRadioDefault">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Female
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Other
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="selection_div">
+                <div class="selection-div">
+                  <select class="form-select form-select1" required aria-label="Default select example">
+                    <option selected value="None">None</option>
+                    <option value="Development">Development</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="HR">HR</option>
+                  </select>
+                </div>
+                <span class="department_span notrequire requireds">This field is required.</span>
+              </div>
+              <input class="form-control date_el1" type="date" >
+              <div class="form-check">
+                <input class="form-check-input el1_checkbox" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label " for="flexCheckDefault">
+                  Permanent Employee
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-secondary add_obj" value="Submit">
+
+            <button type="button" class="btn btn-primary reset-btn" onclick="inputsDefault()">Reset</button>
+          </div>
+        </div>
+    </div>
+   </div>
+
+   <!-- alert -->
+
+
+   <div class="alert-container modal-close-alert">
+     <div class="alert-body">
+       <div class="alert_svg">
+        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm.88 13.75h-1.75V14h1.75v1.75zm0-2.87h-1.75c0-2.84 2.62-2.62 2.62-4.38 0-.96-.79-1.75-1.75-1.75s-1.75.79-1.75 1.75H8.5C8.5 6.57 10.07 5 12 5s3.5 1.57 3.5 3.5c0 2.19-2.62 2.41-2.62 4.38z"></path></svg>
+       </div>
+       <div class="alert_text">
+         <h4>Are you sure to delete this record?</h4>
+         <p>You can't undo this operation</p>
+       </div>
+       <div class="alert_btns">
+         <button class="btn btn-primary" onclick="notDelete()">No</button>
+         <button class="btn btn-danger" onclick="letDelete()">Yes</button>
+       </div>
+     </div>
+   </div>
+
+   <script src="./js/obj.js"></script>
+   <script src="./js/main.js"></script>
+  <script src="./js/add.js"></script>
+  <script src="./js/delete.js"></script>
+  <script src="./js/edit.js"></script>
+  <script src="./js/sorts.js"></script>
+  <script src="./js/sample.js"></script>
+</body>
+</html>
