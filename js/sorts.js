@@ -52,21 +52,21 @@ function asEmail() {
   }
 }
 
-let numS = false;
+numSort.numS = false;
 function numSort() {
+  console.log("hello");
   obj = obj.sort((a, b) => {
-    if (!numS) {
-      numS = true;
+    if (numSort.numS) {
+      numSort.numS = false;
       return b.userMobile - a.userMobile;
     } else {
-      numS = false;
+      numSort.numS = true;
       return a.userMobile - b.userMobile;
     }
   });
   showCards();
 }
 
-let namS = false;
 function hofCompare(field) {
   if (field == "userName") {
     let i = [];
